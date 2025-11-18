@@ -35,9 +35,9 @@ background-position:center; background-size:cover;">
                     PENIS
                 </article>
             </section>
-
+            
             <section style="display: flex; justify-content: end; gap: 6px; margin: 2px;">
-                <button class="button">GitHub</button>
+                <button class="button" on:click={() => window.open('https://github.com/bentoon00')}>GitHub</button>
             </section>
         </div>
     </div>
