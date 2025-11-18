@@ -1,0 +1,44 @@
+
+<div class="background" style="
+background-image: linear-gradient(rgb(1,1,1), rgb(20,20,20));
+height: 100vh; display: flex; justify-content: center; margin: -9px;
+background-position:center; background-size:cover;">
+
+    <div class="window active glass" style="min-width: 50%; max-width:80%; justify-content:center ; margin: auto;">
+        <div class="title-bar" style="background-attachment: scroll;">
+            <div class="title-bar-text">Ben Toon's Website</div>
+            <div class="title-bar-controls">
+                <button aria-label="Help"></button>
+                <button aria-label="Close"></button>
+                
+            </div>
+        </div>
+        
+        <div class="window-body has-space">
+            <section class="tabs">
+                    <menu role="tablist" aria-label="7css menu">
+                        <button role="tab" aria-controls="about" aria-selected="true">About Me</button>
+                        <button role="tab" aria-controls="projects" aria-selected="false">Projects</button>
+                        <button role="tab" aria-controls="contact" aria-selected="false"> Contact</button>
+                    </menu>
+                
+                <article role="tabpanel" id="about">
+                    <h2>About Me</h2>
+                    <p> I am a student from the UK, currently studying Computer Science. </p>
+                </article>
+
+                <article role="tabpanel" id="projects" hidden>
+                    <h2>Projects</h2>
+                </article>
+                
+                <article role="tabpanel" id="contact" hidden>
+                    PENIS
+                </article>
+            </section>
+
+            <section style="display: flex; justify-content: end; gap: 6px; margin: 2px;">
+                <button class="button">GitHub</button>
+            </section>
+        </div>
+    </div>
+</div> 
