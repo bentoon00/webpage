@@ -813,6 +813,28 @@ function attributes(attrs, css_hash, classes, styles, flags = 0) {
   }
   return attr_str;
 }
+function attr_class(value, hash, directives) {
+  var result = to_class(value, hash, directives);
+  return result ? ` class="${escape_html(result, true)}"` : "";
+}
+function slot(renderer, $$props, name, slot_props, fallback_fn) {
+  var slot_fn = $$props.$$slots?.[name];
+  if (slot_fn === true) {
+    slot_fn = $$props[name === "default" ? "children" : name];
+  }
+  if (slot_fn !== void 0) {
+    slot_fn(renderer, slot_props);
+  }
+}
+function bind_props(props_parent, props_now) {
+  for (const key in props_now) {
+    const initial_value = props_parent[key];
+    const value = props_now[key];
+    if (initial_value === void 0 && value !== void 0 && Object.getOwnPropertyDescriptor(props_parent, key)?.set) {
+      props_parent[key] = value;
+    }
+  }
+}
 export {
   ASYNC as A,
   BOUNDARY_EFFECT as B,
@@ -849,5 +871,8 @@ export {
   is_passive_event as t,
   render as u,
   head as v,
-  attr as w
+  attr as w,
+  attr_class as x,
+  slot as y,
+  bind_props as z
 };
