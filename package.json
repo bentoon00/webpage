@@ -33,6 +33,7 @@
 		"vite": "^7.1.10"
 	},
 	"dependencies": {
+		"@sveltejs/adapter-cloudflare": "^7.2.4",
 		"7.css": "^0.21.1",
 		"98.css": "^0.1.21",
 		"xp.css": "^0.2.6"

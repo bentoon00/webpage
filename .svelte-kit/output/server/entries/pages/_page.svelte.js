@@ -38,21 +38,21 @@ function Tabs($$renderer, $$props) {
   bind_props($$props, { activeTab });
 }
 function _page($$renderer) {
-  $$renderer.push(`<div class="background" style="background-image: linear-gradient(rgb(1,1,1), rgb(20,20,20)); height: 100vh; display: flex; justify-content: center; margin: -9px; background-position:center; background-size:cover;"><div class="window active glass" style="min-width: 50%; max-width:80%; justify-content:center ; margin: auto;"><div class="title-bar" style="background-attachment: scroll;"><div class="title-bar-text">Ben Toon's Website</div> <div class="title-bar-controls"><button aria-label="Help"></button> <button aria-label="Close"></button></div></div> <div class="window-body has-space">`);
+  $$renderer.push(`<div class="background" style="background-image: linear-gradient(#153a89, #1d2d4e); height: 100vh; display: flex; justify-content: center; margin: -9px; background-position:center; background-size:cover;"><div id="parent" style="margin:auto;"><section style="margin: 30px; display:flex; justify-content:center"><div role="tooltip" class="is-top is-left" style="width:150px; padding:10px; text-align:center; background:linear-gradient(180deg, #fffff, #ebebeb);">⚠️ Work in Progress!</div></section> <div class="window active glass" style="min-width: 450px; max-width:80%; justify-content:center ; margin: auto;"><div class="title-bar" style="background-attachment: scroll;"><div class="title-bar-text">Ben Toon's Website</div> <div class="title-bar-controls"><button aria-label="Help"></button> <button aria-label="Close"></button></div></div> <div class="window-body has-space" style="min-height: 175px;">`);
   Tabs($$renderer, {
     $$slots: {
       about: ($$renderer2) => {
         $$renderer2.push(`<div slot="about"><article id="about"><fieldset><legend>Welcome!</legend> <p style="padding: 3px;">My name is Ben, I am currently a student in the UK studying computer science.</p></fieldset></article></div>`);
       },
       projects: ($$renderer2) => {
-        $$renderer2.push(`<div slot="projects"></div>`);
+        $$renderer2.push(`<div slot="projects"><article id="projects"><p style="padding: 3px;">ummmmm this website i guess</p></article></div>`);
       },
       contact: ($$renderer2) => {
-        $$renderer2.push(`<div slot="contact"></div>`);
+        $$renderer2.push(`<div slot="contact"><article id="contact"><p>Real contact form will go here at some point</p></article></div>`);
       }
     }
   });
-  $$renderer.push(`<!----> <section style="display: flex; justify-content: end; gap: 6px; margin: 2px;"><button class="button">GitHub</button></section></div></div> <div class="window active is-bright glass" role="dialog" aria-labelledby="dialoge-title" id="popup-help"><div class="title-bar"><div class="title-bar-text" id="dialoge-title">Help</div> <div class="title-bar-controls"><button aria-label="Close">Close</button></div></div> <div class="window-body has-space"><p>This website is built using SvelteKit and the 7.css library</p> <button>Okay</button></div></div></div>`);
+  $$renderer.push(`<!----> <section style="position:absolute; bottom: 15px; right:15px; gap: 10px; margin: 2px;"><button aria-label="button" class="button">E-Mail</button> <button aria-label="button" class="button">GitHub</button></section></div></div> <div class="window active glass" role="dialog" aria-labelledby="dialoge-title" id="popup-help"><div class="title-bar"><div class="title-bar-text" id="dialoge-title">Help</div> <div class="title-bar-controls"><button aria-label="Close"></button></div></div> <div class="window-body has-space"><p>This website is built using SvelteKit and the 7.css library</p> <section style="justify-content:end; display:flex;"><button class="button">OK</button></section></div></div></div></div>`);
 }
 export {
   _page as default
