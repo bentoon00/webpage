@@ -1,4 +1,9 @@
-A vital pillar of internet 
+# A vital pillar of internet 
 
-check branches for the live site code
-https://bentoon00.github.io/webpage/
+### Check the main domain for the updated site:
+**[btn00.com](https://btn00.com/)**
+
+---
+_This version of the site is archived.
+You can still access it using_ **[GitHub Pages.](https://bentoon00.github.io/webpage/)**
+
