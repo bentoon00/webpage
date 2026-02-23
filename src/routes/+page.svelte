@@ -1,85 +1,143 @@
 <script lang="ts">
-    import Tabs from '$lib/components/tabs.svelte';
-import tabs from '$lib/components/tabs.svelte'
+	import Tabs from '$lib/components/tabs.svelte';
 </script>
 
-<div class="background" style="
-background-image: linear-gradient(#153a89, #1d2d4e);
-height: 100vh; display: flex; justify-content: center; margin: -9px;
-background-position:center; background-size:cover;">
+<div class="background">
+	<div id="parent">
+		<div class="window active glass main-window">
+			<div class="title-bar">
+				<div class="title-bar-text">Ben Toon — Portfolio</div>
+				<div class="title-bar-controls">
+					<button aria-label="Help" on:click={() => window.location.assign('#popup-help')}></button>
+					<button aria-label="Close" on:click={() => history.back()}></button>
+				</div>
+			</div>
 
-    <div id="parent" style="margin:auto;">
-        <section style="margin: 30px; display:flex; justify-content:center">
-            <div role="tooltip" class="is-top is-left" style="width:150px; padding:10px; text-align:center; background:linear-gradient(180deg, #fffff, #ebebeb);" >⚠️ Work in Progress!</div>
-        </section>
+			<div class="window-body has-space body-content">
+				<Tabs>
+					<div slot="about">
+						<article id="about">
+							<fieldset>
+								<legend>About Me</legend>
+								<p>
+									Hi, I'm Ben — a computer science student based in the UK with a passion for
+									building clean, functional software. I enjoy working across the full stack, from
+									designing intuitive user interfaces to architecting reliable back-end systems.
+								</p>
+							</fieldset>
+						</article>
+					</div>
 
-        <div class="window active glass" style="min-width: 450px; max-width:80%; justify-content:center ; margin: auto;">
-            <div class="title-bar" style="background-attachment: scroll;">
-                <div class="title-bar-text">Ben Toon's Website</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Help" on:click={() => window.location.assign("#popup-help")}></button>
-                    <button aria-label="Close" on:click={() => history.back()}></button>
-                    
-                </div>
-            </div>
-            
-            
-            <div class="window-body has-space" style="min-height: 175px;">
-                <Tabs>
-                    <div slot="about">
-                        <article id="about">
-                            <fieldset>
-                                <legend>Welcome!</legend>
-                                <p style="padding: 3px;">
-                                My name is Ben, I am currently a student in the UK studying computer science.
-                                </p>
-                            </fieldset>
-                            
-                        </article>
-                    </div>
+					<div slot="projects">
+						<article id="projects">
+							<fieldset>
+								<legend>Projects</legend>
+								<ul class="project-list">
+									<li>
+										<strong>This Website</strong> — A retro-styled personal portfolio built with SvelteKit
+										and 7.css.
+									</li>
+								</ul>
+							</fieldset>
+						</article>
+					</div>
 
-                    <div slot="projects">
-                        <article id="projects">
-                            <p style="padding: 3px;">ummmmm this website i guess</p>
-                        </article>
-                    </div>
+					<div slot="contact">
+						<article id="contact">
+							<fieldset>
+								<legend>Get in Touch</legend>
+								<p>
+									Feel free to reach out via email or check out my work on GitHub using the buttons
+									below.
+								</p>
+							</fieldset>
+						</article>
+					</div>
+				</Tabs>
 
-                    <div slot="contact">
-                        <article id='contact'>
-                            <p> Real contact form will go here at some point</p>
-                        </article>
-                    </div>
-                </Tabs>
-                
-                
-                <section style="position:absolute; bottom: 15px; right:15px; gap: 10px; margin: 2px;">
-                    <button aria-label="button" class="button" on:click={() => window.open("mailto: ben@btn00.com")}> E-Mail</button>
-                    <button aria-label="button" class="button" on:click={() => window.open('https://github.com/bentoon00')}>GitHub</button>
-                </section>
-            </div>
-        </div>
+				<section class="action-buttons">
+					<button
+						aria-label="Send email"
+						class="button"
+						on:click={() => window.open('mailto:ben@btn00.com')}>E-Mail</button
+					>
+					<button
+						aria-label="Open GitHub profile"
+						class="button"
+						on:click={() => window.open('https://github.com/bentoon00')}>GitHub</button
+					>
+				</section>
+			</div>
+		</div>
 
-        
+		<div class="window active glass" role="dialog" aria-labelledby="dialog-title" id="popup-help">
+			<div class="title-bar">
+				<div class="title-bar-text" id="dialog-title">Help</div>
+				<div class="title-bar-controls">
+					<button aria-label="Close" on:click={() => history.back()}></button>
+				</div>
+			</div>
 
-        <div class="window active glass" role="dialog" aria-labelledby="dialoge-title" id="popup-help">
-            <div class='title-bar'>
-                <div class="title-bar-text" id="dialoge-title">
-                    Help
-                </div>
-                <div class="title-bar-controls">
-                    <button aria-label="Close" on:click={() => history.back()}></button>
-                </div>
-                
-            </div>
+			<div class="window-body has-space">
+				<p>This website is built using SvelteKit and the 7.css library.</p>
+				<section class="dialog-actions">
+					<button class="button" on:click={() => history.back()}>OK</button>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
 
-            <div class="window-body has-space">
-                <p>This website is built using SvelteKit and the 7.css library</p>
-                <section style="justify-content:end; display:flex;">
-                    <button class="button" on:click={() => history.back()}>OK</button>
-                </section>
-                
-            </div>
-        </div>
-    </div>
+<style>
+	.background {
+		background-image: linear-gradient(#153a89, #1d2d4e);
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: -9px;
+	}
 
-</div> 
+	#parent {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 16px;
+		padding: 24px;
+	}
+
+	.main-window {
+		min-width: 480px;
+		max-width: 640px;
+		width: 100%;
+	}
+
+	.body-content {
+		min-height: 200px;
+		padding-bottom: 56px;
+		position: relative;
+	}
+
+	.action-buttons {
+		position: absolute;
+		bottom: 12px;
+		right: 12px;
+		display: flex;
+		gap: 8px;
+	}
+
+	.project-list {
+		margin: 4px 0;
+		padding-left: 20px;
+	}
+
+	.project-list li {
+		margin-bottom: 6px;
+	}
+
+	.dialog-actions {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 8px;
+	}
+</style>
