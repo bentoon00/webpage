@@ -44,7 +44,7 @@
 	</li>
 </menu>
 
-<section class="tabs-content">
+<section class="tabs-content" role="tabpanel">
 	{#if activeTab === 'about'}
 		<slot name="about" />
 	{:else if activeTab === 'projects'}
