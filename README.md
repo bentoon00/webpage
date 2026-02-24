@@ -5,5 +5,5 @@
 
 ---
 _This version of the site is archived.
-You can still access it using_ **[GitHub Pages.](https://bentoon00.github.io/webpage/)**
+You can still access it using_ **[GitHub Pages.](https://ben0x00.github.io/webpage/)**
 
