@@ -118,9 +118,8 @@
 								<fieldset>
 									<legend>About Me</legend>
 									<p>
-										Hi, I'm Ben — a computer science student based in the UK with a passion for
-										building clean, functional software. I enjoy working across the full stack, from
-										designing intuitive user interfaces to architecting reliable back-end systems.
+										Hi, I'm Ben — a computer science student based in the UK. I am interested in tech, science, and design.
+										Currently, this site serves as a testbed for experimenting and developing my web development skills. I plan to expand and refine it with more projects and content in the future :)
 									</p>
 								</fieldset>
 							</article>
